@@ -1,0 +1,47 @@
+body {
+    
+    background-color: rgb(250, 250, 117);
+}
+
+
+img {
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+
+}
+
+h1 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    text-shadow: 2px 2px #ffffff;
+}
+
+h2 {
+	text-align: center;
+	text-shadow: 2px 2px #ffffff;
+}
+
+.center {
+    text-align: center;
+}
+
+li {
+    padding: 15px;
+    margin: 15px;
+    background: #ffffff;
+    list-style: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.create-update-form {
+    padding: 25px;
+    margin: 25px;
+    background: #eceff1;
+    border: 1px black solid;
+}

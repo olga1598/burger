@@ -1,0 +1,61 @@
+<img src="assets/img/burger_sandwich_PNG4160.png" alt="Eat-Da-Burger App">
+
+</br>
+
+<h1>Eat Da Burger! Just eat it! And Enjoy!</h1>
+
+</br>
+
+<div class="row">
+    <div class="center col-sm-12">
+        <h2>Add a Burger: </h2>
+
+        <form class="create-update-form" action="/" method="POST">
+            <div class="form-group">
+                <label for="dab">Enter a Burger Name:</label>
+                <input type="text" id="dab" name="burger_name" placeholder="Enter your burger...">
+            </div>
+            <button class="btn btn-primary" type="submit"><i class="fas fa-hamburger"></i> Add Burger</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+
+    <div class="col-sm-6">
+
+        <div id='available'>
+            <h2>Burgers Available to Eat:</h2>
+            <ul>
+                {{#each burgers}} {{#unless this.devoured}}
+                <li>
+                    
+                    {{this.id}}. {{this.burger_name}}
+
+                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                        <input type="hidden" name="devoured" value="true">
+                        <button class="btn btn-warning" type="submit">Eat Me!</button>
+                    </form>
+                
+                </li>
+                {{/unless}} {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+
+        <div id='devoured'>
+            <h2>Burgers That Have <br>Been Devoured: </h2>
+
+            <ul>
+                {{#each burgers}} {{#if this.devoured}}
+                <li>
+                    {{this.id}}. {{this.burger_name}}
+                </li>
+                {{/if}} {{/each}}
+            </ul>
+        </div>
+        
+    </div>
+</div>
