@@ -2,7 +2,7 @@
 
 var express = require("express");
 const bodyParser = require("body-parser");
-var methodOverride = require('method-override');
+//var methodOverride = require('method-override');
 
 var app = express();
 
@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 // app.use(express.json());
 
 //Override with POST having ?_method=DELETE or PUT
-app.use(methodOverride('_method'));
+//app.use(methodOverride('_method'));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");
