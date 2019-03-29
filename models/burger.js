@@ -8,16 +8,20 @@ var burger = {
             cb(result);
         });
     },
-    // The variables colNames and colValues are arrays.
-    create: function(colNames, colValues, cb) {
-        orm.create("burgers", colNames, colValues, function(result) {
-            cb(result);
+    //create for creating a new burger
+    create: function (col1, col2, newBurgerName, cb) {
+        // EXAMPLE QUERY STRING
+        // "INSERT INTO burgers(burger_name,devoured) VALUES (?,?)"
+        orm.create("burgers", col1, col2, newBurgerName, function (res) {
+            cb(res);
         });
     },
-      // updateOne for changing the burger status
-    update: function(objColVals, condition, cb) {
-        orm.update('burgers', objColVals, condition, function(result) {
-          cb(result);
+    // update for changing the burger status
+    update: function (col, val, id, cb) {
+        // EXAMPLE QUERY STRING
+        // "UPDATE burgers SET devoured= true WHERE ?;"
+        orm.update("burgers", col, val, id, function (res) {
+            cb(res);
         });
     }
 };

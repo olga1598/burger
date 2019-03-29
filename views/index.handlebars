@@ -10,7 +10,7 @@
     <div class="center col-sm-12">
         <h2>Add a Burger: </h2>
 
-        <form class="create-update-form" action="/" method="POST">
+        <form class="create-update-form" action="/api/burgers" method="POST">
             <div class="form-group">
                 <label for="dab">Enter a Burger Name:</label>
                 <input type="text" id="dab" name="burger_name" placeholder="Enter your burger...">
@@ -32,11 +32,14 @@
                     
                     {{this.id}}. {{this.burger_name}}
 
-                    <form action="/{{this.id}}?_method=PUT" method="POST">
+                    {{!-- <form action="/{{this.id}}?_method=PUT" method="POST">
                         <input type="hidden" name="devoured" value="true">
                         <button class="btn btn-warning" type="submit">Eat Me!</button>
+                    </form> --}}
+                        <form action="/api/burgers/{{this.id}}" method="PUT">
+                        {{!-- <input type="hidden" name="devoured" value="true"> --}}
+                        <button class="btn btn-warning devour-btn" type="submit" data-id={{this.id}} data-devoured=true>Eat Me!</button>
                     </form>
-                
                 </li>
                 {{/unless}} {{/each}}
             </ul>
