@@ -23,5 +23,9 @@
     "express-handlebars": "^3.0.2",
     "method-override": "^3.0.0",
     "mysql": "^2.16.0"
+  },
+  "production" : {
+    "use_env_variable":"JAWS_DB_URL",
+    "dialect": "mysql"
   }
 }
